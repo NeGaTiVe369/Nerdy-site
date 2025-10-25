@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { use, useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useCart } from "@/lib/cart-context"
@@ -32,10 +32,13 @@ const productData: Record<string, any> = {
   },
 }
 
-export default function ProductPage({ params }: { params: { id: string } }) {
+export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+  // export default function ProductPage() {
+    // const { id } = useParams<{ id: string }>()
+  const { id } = use(params)
   const [currentImage, setCurrentImage] = useState(0)
   const { addItem } = useCart()
-  const product = productData[params.id] || productData["1"]
+  const product = productData[id] || productData["1"]
 
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % product.images.length)
@@ -47,7 +50,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
   const handleAddToCart = () => {
     addItem({
-      id: params.id,
+      id: id,
       name: product.name,
       type: product.type,
       price: product.price,
