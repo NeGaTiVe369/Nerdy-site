@@ -1,0 +1,173 @@
+.main {
+  padding-top: 5rem;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 3rem;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--foreground);
+}
+
+.productGrid {
+  display: grid;
+  gap: 4rem;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mainImage {
+  aspect-ratio: 1;
+  background-color: var(--muted);
+  position: relative;
+}
+
+.mainImage img {
+  object-fit: cover;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.mainImage:hover .navButton {
+  opacity: 1;
+}
+
+.navButtonPrev {
+  left: 1rem;
+}
+
+.navButtonNext {
+  right: 1rem;
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.thumbnail {
+  aspect-ratio: 1;
+  background-color: var(--muted);
+  position: relative;
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+}
+
+.thumbnailActive {
+  opacity: 1;
+  outline: 2px solid var(--foreground);
+  outline-offset: -2px;
+}
+
+.thumbnail img {
+  object-fit: cover;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.productHeader h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.productHeader p {
+  color: var(--muted-foreground);
+  font-size: 1.125rem;
+}
+
+.price {
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+.addToCartButton {
+  width: 100%;
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+.addToCartButton:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.description {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.descriptionTitle {
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+}
+
+.descriptionText {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+@media (min-width: 768px) {
+  .productHeader h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .productHeader h1 {
+    font-size: 3.75rem;
+  }
+}
