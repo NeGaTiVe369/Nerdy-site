@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { useCart } from "@/app/lib/cart-context"
+import { useCart } from "@/lib/cart-context"
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"

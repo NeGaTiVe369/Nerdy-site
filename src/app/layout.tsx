@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist as Geist_Sans } from "next/font/google"
 import { Playfair_Display } from "next/font/google"
-import { CartProvider } from "@/app/lib/cart-context"
+import { CartProvider } from "@/lib/cart-context"
 import { CartPanel } from "@/components/cart-panel"
 import "./globals.css"
 

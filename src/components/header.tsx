@@ -3,7 +3,7 @@
 import type React from "react"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
-import { useCart } from "@/app/lib/cart-context"
+import { useCart } from "@/lib/cart-context"
 import styles from "./header.module.css"
 
 export function Header() {
